@@ -1,0 +1,15 @@
+C:\Users\zanop\Facul\ProcImg\ProcImg-TDE-1\ProcImg-TDE-1\ProcImg-TDE-1\bin\Debug\net6.0\ProcImg-TDE-1.exe
+C:\Users\zanop\Facul\ProcImg\ProcImg-TDE-1\ProcImg-TDE-1\ProcImg-TDE-1\bin\Debug\net6.0\ProcImg-TDE-1.deps.json
+C:\Users\zanop\Facul\ProcImg\ProcImg-TDE-1\ProcImg-TDE-1\ProcImg-TDE-1\bin\Debug\net6.0\ProcImg-TDE-1.runtimeconfig.json
+C:\Users\zanop\Facul\ProcImg\ProcImg-TDE-1\ProcImg-TDE-1\ProcImg-TDE-1\bin\Debug\net6.0\ProcImg-TDE-1.dll
+C:\Users\zanop\Facul\ProcImg\ProcImg-TDE-1\ProcImg-TDE-1\ProcImg-TDE-1\bin\Debug\net6.0\ProcImg-TDE-1.pdb
+C:\Users\zanop\Facul\ProcImg\ProcImg-TDE-1\ProcImg-TDE-1\ProcImg-TDE-1\obj\Debug\net6.0\ProcImg-TDE-1.csproj.AssemblyReference.cache
+C:\Users\zanop\Facul\ProcImg\ProcImg-TDE-1\ProcImg-TDE-1\ProcImg-TDE-1\obj\Debug\net6.0\ProcImg-TDE-1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zanop\Facul\ProcImg\ProcImg-TDE-1\ProcImg-TDE-1\ProcImg-TDE-1\obj\Debug\net6.0\ProcImg-TDE-1.AssemblyInfoInputs.cache
+C:\Users\zanop\Facul\ProcImg\ProcImg-TDE-1\ProcImg-TDE-1\ProcImg-TDE-1\obj\Debug\net6.0\ProcImg-TDE-1.AssemblyInfo.cs
+C:\Users\zanop\Facul\ProcImg\ProcImg-TDE-1\ProcImg-TDE-1\ProcImg-TDE-1\obj\Debug\net6.0\ProcImg-TDE-1.csproj.CoreCompileInputs.cache
+C:\Users\zanop\Facul\ProcImg\ProcImg-TDE-1\ProcImg-TDE-1\ProcImg-TDE-1\obj\Debug\net6.0\ProcImg-TDE-1.dll
+C:\Users\zanop\Facul\ProcImg\ProcImg-TDE-1\ProcImg-TDE-1\ProcImg-TDE-1\obj\Debug\net6.0\refint\ProcImg-TDE-1.dll
+C:\Users\zanop\Facul\ProcImg\ProcImg-TDE-1\ProcImg-TDE-1\ProcImg-TDE-1\obj\Debug\net6.0\ProcImg-TDE-1.pdb
+C:\Users\zanop\Facul\ProcImg\ProcImg-TDE-1\ProcImg-TDE-1\ProcImg-TDE-1\obj\Debug\net6.0\ProcImg-TDE-1.genruntimeconfig.cache
+C:\Users\zanop\Facul\ProcImg\ProcImg-TDE-1\ProcImg-TDE-1\ProcImg-TDE-1\obj\Debug\net6.0\ref\ProcImg-TDE-1.dll
