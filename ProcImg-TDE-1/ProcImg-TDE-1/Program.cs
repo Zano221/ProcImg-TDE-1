@@ -79,7 +79,7 @@ float Normalize_RGB(int iR, int iG, int iB)
 }
 
 
-(float, float, float) Convert_RGB_HSV(int iR, int iG, int iB)
+(int, int, int) Convert_RGB_HSV(int iR, int iG, int iB)
 {
     float fDelta = Calc_Delta(iR, iG, iB);
 
@@ -121,7 +121,9 @@ float Normalize_RGB(int iR, int iG, int iB)
     //Calcular o Valor
     float fV = fMax;
 
-    return (fH, fS, fV);
+    return (Convert.ToInt32(Math.Floor(fH)), 
+        Convert.ToInt32(Math.Ceiling(fS * 100)), 
+        Convert.ToInt32(Math.Ceiling(fV * 100)));
 }
 
 
@@ -136,14 +138,10 @@ while(true)
 {
     bool bIsInputValid = true;
 
-    Console.WriteLine("\nInsira o tipo de entrada (em numeros)\n");
-    Console.WriteLine(" - (1). Normalizar RGB");
-    Console.WriteLine(" - (2). Converter RGB para CMYK");
-    Console.WriteLine(" - (3). Converter CMYK para RGB");
-    Console.WriteLine(" - (4). Converter RGB para HSV");
-    Console.WriteLine(" - (5). Converter HSV para RGB");
-    Console.WriteLine(" - (6). Converter RGB para HSV");
-    Console.WriteLine(" - (7). Converter RGB para escala de cinza");
+    Console.WriteLine("\nInsira o numero da entrada correspondente (em numeros)\n");
+    Console.WriteLine(" - (1). RGB (normalizado, convertido para CMYK, HSV, e escala de cinza)");
+    Console.WriteLine(" - (2). CMYK para RGB");
+    Console.WriteLine(" - (3). HSV para RGB");
     
     String sInput = Console.ReadLine();
     int iChoice = 0;
@@ -173,39 +171,11 @@ while(true)
         return;
     }
 
-    if(iChoice < 1 || iChoice > 7)
+    if(iChoice < 1 || iChoice > 3)
     {
-        Console.WriteLine("ERRO! O VALOR DE CONVERSÃO DEVE SER ENTRE 1-7");
+        Console.WriteLine("ERRO! O VALOR DE CONVERSÃO DEVE SER ENTRE 1-3");
         break;
     }
-
-    /*switch (iChoice)
-    {
-        case 1:
-
-            break;
-        case 2:
-
-            break;
-        case 3:
-
-            break;
-        case 4:
-            break;
-        case 5:
-            break;
-        case 6:
-            break;
-        case 7:
-            break;
-        default:
-
-            break;
-       
-    }*/
-
-
-
 
     int iInputR = 0, iInputG = 0, iInputB = 0;
 
@@ -213,7 +183,15 @@ while(true)
     {
         
     }
-    else if(iChoice == 2 || iChoice == 4 || iChoice == 6)
+    else if(iChoice == 2)
+    {
+
+    }
+    else if(iChoice == 3)
+    {
+
+    }
+    else
     {
 
     }
@@ -267,7 +245,7 @@ while(true)
 
     Console.WriteLine("Valor RGB Convertido para CMYK: (" + sCOutput + "% , " + sYOutput + "% , " +  sMOutput + "% , " + sKOutput + "%)" );
 
-    Console.WriteLine("Valor RGB Convertido para HSV: " + Convert_RGB_HSV(iInputR, iInputG, iInputB));
+    Console.WriteLine("Valor RGB Convertido para HSV: " + Convert_RGB_HSV(iInputR, iInputG, iInputB).ToString());
 }
 
 
