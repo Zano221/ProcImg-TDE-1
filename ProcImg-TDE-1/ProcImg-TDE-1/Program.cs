@@ -166,15 +166,51 @@ float Normalize_RGB(int iR, int iG, int iB)
         Convert.ToInt32(Math.Ceiling(fV * 100)));
 }
 
-void Convert_HSV_RGB(int iH, int iS, int iV)
+(int, int, int) Convert_HSV_RGB(int iH, int iS, int iV)
 {
     float fH = Convert.ToSingle(iH) / 100.0f;
     float fS = Convert.ToSingle(iS) / 100.0f;
     float fV = Convert.ToSingle(iV) / 100.0f;
 
-    int iC = iS * iV;
-    int iX = iC * (1 - Math.Abs((iH / 60) % 2 - 1));
+    float fC = fS * fV;
+    float fX = (fC * Math.Abs(1 - (fH / 60f) % 2)); //???? n sei oq fazer
 
+    float fM = fV - fC;
+
+    float fR = 0, fG = 0, fB = 0;
+
+    Console.WriteLine(fC.ToString() + fX.ToString() + iV.ToString());
+
+    if (iH >= 0 && iH < 60)
+    {
+        (fR, fG, fB) = (fC, fX, 0);
+    }
+    else if(iH >= 60 && iH < 120)
+    {
+        (fR, fG, fB) = (fX, fC, 0);
+    }
+    else if(iH >= 120 && iH < 180)
+    {
+        (fR, fG, fB) = (0, fC, fX);
+    }
+    else if(iH >= 180 && iH < 240)
+    {
+        (fR, fG, fB) = (0, fX, fC);
+    }
+    else if(iH >= 240 && iH < 300)
+    {
+        (fR, fG, fB) = (fX, 0, fC);
+    }
+    else if(iH >= 300 && iH < 360)
+    {
+        (fR, fG, fB) = (fC, 0, fX);
+    }
+
+    int iR = Convert.ToInt32((fR + fM) * 255.0f);
+    int iG = Convert.ToInt32((fG + fM) * 255.0f);
+    int iB = Convert.ToInt32((fB + fM) * 255.0f);
+
+    return (iR, iG, iB);
 }
 
 bool bIsInput = true;
@@ -187,7 +223,8 @@ while(true)
     Console.WriteLine(" - (1). RGB (normalizado, convertido para CMYK, HSV, e escala de cinza)");
     Console.WriteLine(" - (2). CMYK para RGB");
     Console.WriteLine(" - (3). HSV para RGB");
-    
+
+    Console.Write("Entrada: ");
     String sInput = Console.ReadLine();
     int iChoice = 0;
 
@@ -303,14 +340,14 @@ while(true)
     {
         try
         {
-            Console.WriteLine("Insira o valor H: ");
+            Console.Write("Insira o valor H: ");
             iInputH = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Insira o valor S: ");
-            iInputH = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Insira o valor S: ");
+            iInputS = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Insira o valor V: ");
-            iInputH = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Insira o valor V: ");
+            iInputV = Convert.ToInt32(Console.ReadLine());
         }
         catch (Exception e)
         {
@@ -319,16 +356,11 @@ while(true)
             bIsInput = false;
         }
 
-
-        (iInputH, iInputS, iInputV) = Assert_HSV_100(iInputH, iInputS, iInputV);
+        //(iInputH, iInputS, iInputV) = Assert_HSV_100(iInputH, iInputS, iInputV);
 
         Console.WriteLine("Valor HSV Convertido para RGB: " + Convert_HSV_RGB(iInputH, iInputS, iInputV));
     }
-    //Vai dar erro e pedir para reinserir os dados
-    else
-    {
 
-    }
 
     Console.WriteLine("\nPressione qualquer botão para prosseguir\n");
     Console.Read();
